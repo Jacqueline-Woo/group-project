@@ -1,16 +1,17 @@
 {% extends 'index.html' %}
 
-{% block title %}Get Users by City{% endblock %}
+{% block title %}Log In{% endblock %}
 
 {% block form %}
 {% if status %}
   <h1>{{ status }}</h1>
 {% endif %}
 <h2>
-    Submit your information!
+    Please enter your username and password.
 </h2>
 <form method="post" action="/getUser">
-    <p>City: <input type="text" name="city"></p>
+    <p>Email: <input type="text" name="email"></p>
+    <p>Password: <input type="text" name="password"></p>
     <p><input type="submit"></p>
 </form>
 {% endblock %}

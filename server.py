@@ -85,3 +85,36 @@ def return_users_by_city():
     else:
         status = "Users found!"
     return render_template("get_user.html", status=status, users=users)
+
+# HTML form - Feed page (submit and display posts)
+@app.route('/feed')
+def feed():
+    return render_template("feed.html")
+
+@app.route('/feed', methods=["GET", "POST"])
+def submit_post():
+    if request.method == "GET":
+        return redirect(url_for('feed'))
+    elif request.method == "POST":
+        submission = dict(request.form)
+        post = submission["post"]
+        if( len(post) < 1 ):
+            return render_template("feed.html", status='Submission was blank. Please try again.')
+        else:
+            with open('data/posts.csv', mode='a', newline='') as file:
+                data = csv.writer(file)
+                data.writerow([post])
+            return render_template("feed.html", status='Post submitted!')
+
+        #if( len(post) == 0 ):
+            #return render_template("feed.html", status='Submission was blank. Please try again.')
+        #else:
+            #return render_template("feed.html", status='Post submitted!', post=post)
+
+# the following is part of feed
+#def return_posts():
+    #if( len(post) == 0 ):
+        #status = "You submitted a blank post. Please try again."
+    #else:
+        #status = "Post submitted!"
+        #return render_template("feed.html", status=status, post=post)
