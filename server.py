@@ -7,9 +7,15 @@ app = Flask(__name__)
 def hello_world():
     return render_template("index.html")
 
+# HTML page?
 @app.route('/about')
-def about():
-    return 'This site was developed by Arpita'
+def about_us():
+   return render_template("about_us.html")
+
+# HTML page?
+@app.route('/profile')
+def profile():
+   return render_template("profile.html")
 
 @app.route('/hello/<uname>')
 def say_hello(uname):
@@ -27,7 +33,10 @@ def return_users():
                 users.append({
                 "fname": row[0],
                 "lname": row[1],
-                "city": row[2]
+                "city": row[2],
+                "email": row[3],
+                "password": row[4],
+                "confirmpassword": row[5]
                 })
             else:
                 first_line = False
@@ -48,13 +57,17 @@ def submit_form():
         fname = userdata["fname"]
         lname = userdata["lname"]
         city = userdata["city"]
-        if( len(fname) < 1 or len(lname) < 1 or len(city) < 1 ):
+        email = userdata["email"]
+        password = userdata["password"]
+        confirmpassword = userdata["confirmpassword"]
+        if( len(fname) < 1 or len(lname) < 1 or len(city) < 1 or len(email) < 1 or len(password) < 1  or len(confirmpassword) < 1 ):
             return render_template("new_user.html", status='Please resubmit with valid information.')
         else:
             with open('data/users.csv', mode='a', newline='') as file:
                 data = csv.writer(file)
-                data.writerow([fname, lname, city])
-            return render_template("new_user.html", status='User added!')
+                data.writerow([fname, lname, city, email, password, confirmpassword])
+            return render_template("new_user.html", status='You have successfully created an account!') 
+            
 
 # HTML form
 @app.route('/getUser')
