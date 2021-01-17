@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+
+{% block title %}Get Users by Email and {% endblock %}
+
+{% block form %}
+{% if status %}
+  <h1>{{ status }}</h1>
+{% endif %}
+<h2>
+    SBUWEB LOGIN
+</h2>
+<form method="post" action="/getUser">
+    <p>Email: <input type="text" name="Email"></p>
+    <p>Password: <input type="text" name="Passw"></p>
+    <p><input type="submit"></p>
+</form>
+{% endblock %}
+
+{% block userList %}
+<div id="user_list">
+{% for user in users %}
+    <h2>
+        {{ user.fname }} {{ user.lname }}
+    </h2>
+{% endfor %}
+{% endblock %}
