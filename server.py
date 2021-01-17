@@ -7,6 +7,7 @@ app = Flask(__name__)
 def hello_world():
     return render_template("index.html")
 
+<<<<<<< HEAD
 # HTML page?
 @app.route('/about')
 def about_us():
@@ -16,6 +17,11 @@ def about_us():
 @app.route('/profile')
 def profile():
    return render_template("profile.html")
+=======
+@app.route('/about')
+def about():
+    return 'This site was developed by Arpita'
+>>>>>>> 9d0b1be352caa575c8f6d9fb67109cdf49fac70c
 
 @app.route('/hello/<uname>')
 def say_hello(uname):
@@ -33,10 +39,14 @@ def return_users():
                 users.append({
                 "fname": row[0],
                 "lname": row[1],
+<<<<<<< HEAD
                 "city": row[2],
                 "email": row[3],
                 "password": row[4],
                 "confirmpassword": row[5]
+=======
+                "city": row[2]
+>>>>>>> 9d0b1be352caa575c8f6d9fb67109cdf49fac70c
                 })
             else:
                 first_line = False
@@ -57,17 +67,26 @@ def submit_form():
         fname = userdata["fname"]
         lname = userdata["lname"]
         city = userdata["city"]
+<<<<<<< HEAD
         email = userdata["email"]
         password = userdata["password"]
         confirmpassword = userdata["confirmpassword"]
         if( len(fname) < 1 or len(lname) < 1 or len(city) < 1 or len(email) < 1 or len(password) < 1  or len(confirmpassword) < 1 ):
+=======
+        if( len(fname) < 1 or len(lname) < 1 or len(city) < 1 ):
+>>>>>>> 9d0b1be352caa575c8f6d9fb67109cdf49fac70c
             return render_template("new_user.html", status='Please resubmit with valid information.')
         else:
             with open('data/users.csv', mode='a', newline='') as file:
                 data = csv.writer(file)
+<<<<<<< HEAD
                 data.writerow([fname, lname, city, email, password, confirmpassword])
             return render_template("new_user.html", status='You have successfully created an account!') 
             
+=======
+                data.writerow([fname, lname, city])
+            return render_template("new_user.html", status='User added!')
+>>>>>>> 9d0b1be352caa575c8f6d9fb67109cdf49fac70c
 
 # HTML form
 @app.route('/getUser')
@@ -97,4 +116,8 @@ def return_users_by_city():
         status = "No Users Found for specified city."
     else:
         status = "Users found!"
+<<<<<<< HEAD
     return render_template("get_user.html", status=status, users=users)
+=======
+    return render_template("get_user.html", status=status, users=users)
+>>>>>>> 9d0b1be352caa575c8f6d9fb67109cdf49fac70c
