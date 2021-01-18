@@ -1,6 +1,6 @@
 body {
-  font-family: courier;
-  background-color: lightblue;
+  font-family: georgia;
+  background-color: teal;
   margin: 0px;
 }
 
@@ -15,7 +15,7 @@ body {
 
 input {
   background: none;
-  font-family: courier;
+  font-family: georgia;
   font-size: 1.1em;
   padding: 5px;
   border-radius: 10px;

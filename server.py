@@ -64,9 +64,9 @@ def get_user():
 @app.route('/getUser', methods=["POST"])
 def return_users_by_city():
     userdata = dict(request.form)
-    city = userdata["city"]
-    if( len(city) < 1 ):
-        return render_template("get_user.html", status="Invalid City")
+    post = userdata["post"]
+    if( len(post) < 1 ):
+        return render_template("get_user.html", status="Invalid Post")
     with open('data/users.csv') as file:
         data = csv.reader(file, delimiter=',')
         first_line = True
@@ -104,7 +104,7 @@ def submit_post():
             with open('data/posts.csv', mode='a', newline='') as file:
                 data = csv.writer(file)
                 data.writerow([post])
-            return render_template("feed.html", status='Post submitted!')
+            return render_template("feed.html", status='Post submitted!', post=post)
 
         #if( len(post) == 0 ):
             #return render_template("feed.html", status='Submission was blank. Please try again.')
