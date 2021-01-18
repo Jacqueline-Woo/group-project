@@ -1,7 +1,7 @@
-Fname,Lname,City
-Anne,Smith,New York
-Anita,Singh,London
-Carly,Zhang,Dallas
-Dani,Lee,Rome
-Lee,Smith,Stony Brook
-Anna,Garcia,Portland
+Fname,Lname,City,Email,Password,ConfirmPassword
+Anne,Smith,New York,anne.smith@stonybrook.edu,strawberries,strawberries
+Anita,Singh,London,anita.singh@stonybrook.edu,strawberries,strawberries
+Carly,Zhang,Dallas,carly.zhang@stonybrook.edu,strawberries,strawberries
+Dani,Lee,Rome,danilee.rome@stonybrook.edu,strawberries,strawberries
+Lee,Smith,Stony Brook,lee.smith@stonybrook.edu,strawberries,strawberries
+Anna,Garcia,Portland,anna.garcia@stonybrook.edu,strawberries,strawberries
