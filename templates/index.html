@@ -5,19 +5,28 @@
         <title>{% block title %}A MERIT Example{% endblock %}</title>
         <link rel="stylesheet" type="text/css" href="static/style.css">
     </head>
+    
     <body>
         <div class="topnav">
             <a href="/">Home</a>
+            <a href="/feed">Feed</a>
             <a href="/users">Users</a>
+            <a href="/posts">Posts</a>
             <a href="/newUser">New User</a>
-            <a href="/getUser">Get User</a>
+            <a href="/getUser">Login</a>
             <a href="/about">About</a>
             <a href="/profile">Profile</a>
         </div>
+       
+       
         <div class="bodyContent">
             <h1>
-                Welcome to our website!
+                Welcome to Group 2's website!
             </h1>
+
+            <center><img src="{{ user_image }}"></center>
+            
+
             {% block form %} {% endblock %}
             {% block userList %}
             <div id="user_list">
@@ -37,8 +46,11 @@
                 <p>
                     <b>ConfirmPassword</b>: {{ user.confirmpassword }}
                 </p>
+
             {% endfor %}
             {% endblock %}
+
+             </div>
             </div>
         </div>
     </body>

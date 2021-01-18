@@ -1,21 +1,31 @@
 from flask import Flask, render_template, request, redirect, url_for
 import csv
+import os
 
 app = Flask(__name__)
 
+picFolder = os.path.join('static','pics')
+
+app.config['UPLOAD_FOLDER'] = picFolder
+
+
 @app.route('/')
 def hello_world():
-    return render_template("index.html")
+    pic1 = os.path.join(app.config['UPLOAD_FOLDER'],'pic1.jpg')
+    return render_template("index.html", user_image = pic1)
+    #return render_template("index.html")
 
 # HTML page?
 @app.route('/about')
 def about_us():
-   return render_template("about_us.html")
+    pic2 = os.path.join(app.config['UPLOAD_FOLDER'],'pic2.gif')
+    return render_template("about_us.html", user_image2 = pic2)
 
 # HTML page?
 @app.route('/profile')
 def profile():
-   return render_template("profile.html")
+   pic3 = os.path.join(app.config['UPLOAD_FOLDER'],'pic3.gif')
+   return render_template("profile.html", user_image3 = pic3)
 
 @app.route('/hello/<uname>')
 def say_hello(uname):
@@ -42,6 +52,11 @@ def return_users():
                 first_line = False
     return render_template("index.html", users=users)
 
+
+
+
+
+
 # HTML form
 @app.route('/newUser')
 def new_user():
@@ -66,7 +81,8 @@ def submit_form():
             with open('data/users.csv', mode='a', newline='') as file:
                 data = csv.writer(file)
                 data.writerow([fname, lname, city, email, password, confirmpassword])
-            return render_template("new_user.html", status='You have successfully created an account!') 
+            # return render_template("new_user.html", status='You have successfully created an account!') 
+            return render_template("feed.html", status='You have successfully created an account!') 
             
 
 # HTML form
@@ -98,3 +114,38 @@ def return_users_by_city():
     else:
         status = "Users found!"
     return render_template("get_user.html", status=status, users=users)
+
+
+
+# HTML form - Feed page (submit and display posts)
+@app.route('/feed')
+def feed():
+    return render_template("feed.html")
+
+@app.route('/feed', methods=["GET", "POST"])
+def submit_post():
+    if request.method == "GET":
+        return redirect(url_for('feed'))
+    elif request.method == "POST":
+        submission = dict(request.form)
+        post = submission["post"]
+        if( len(post) < 1 ):
+            return render_template("feed.html", status='Submission was blank. Please try again.')
+        else:
+            with open('data/posts.csv', mode='a', newline='') as file:
+                data = csv.writer(file)
+                data.writerow([post])
+            return render_template("feed.html", status='Post submitted!')
+
+        #if( len(post) == 0 ):
+            #return render_template("feed.html", status='Submission was blank. Please try again.')
+        #else:
+            #return render_template("feed.html", status='Post submitted!', post=post)
+
+# the following is part of feed
+#def return_posts():
+    #if( len(post) == 0 ):
+        #status = "You submitted a blank post. Please try again."
+    #else:
+        #status = "Post submitted!"
+        #return render_template("feed.html", status=status, post=post)

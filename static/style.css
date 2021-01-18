@@ -1,6 +1,6 @@
 body {
-  font-family: courier;
-  background-color: lightblue;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #80bfff;
   margin: 0px;
 }
 
@@ -9,9 +9,10 @@ body {
 }
 
 #user_list {
-    background-color: pink;
+    background-color: #ccccff;
     width: 250px;
 }
+
 
 input {
   background: none;
