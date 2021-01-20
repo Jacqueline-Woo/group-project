@@ -18,8 +18,8 @@ app.config['UPLOAD_FOLDER'] = picFolder
 
 @app.route('/')
 def hello_world():
-    pic1 = os.path.join(app.config['UPLOAD_FOLDER'],'pic1.jpg')
-    return render_template("index.html", user_image = pic1)
+    homepic = os.path.join(app.config['UPLOAD_FOLDER'],'homepic.png')
+    return render_template("index.html", homepic = homepic)
     #return render_template("index.html")
 
 # HTML page?
@@ -121,9 +121,11 @@ def submit_post():
             return render_template("submit.html", status='Submission was blank. Please try again.')
         else:
             with open('data/posts.csv', mode='a', newline='') as file:
-                data = csv.writer(file)
+                data = csv.writer(file, delimiter=',')
                 data.writerow([post])
+            #dateTimeObj = datetime.now()
             return render_template("submit.html", status='Post submitted!', post=post)
+
 
 # taken from https://kellylougheed.medium.com/make-a-flask-app-with-a-csv-as-a-flat-file-database-373632a2fba4
 #@app.route("/feed")
@@ -150,8 +152,8 @@ def submit_post():
 # HTML form
 @app.route('/login')
 def login():
-    welcome = os.path.join(app.config['UPLOAD_FOLDER'],'welcome.gif')
-    return render_template("login.html", welcome_image = welcome)
+    log_in = os.path.join(app.config['UPLOAD_FOLDER'],'log_in.png')
+    return render_template("login.html", log_in = log_in)
 
 
 

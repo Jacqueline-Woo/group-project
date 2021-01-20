@@ -1,18 +1,23 @@
 {% extends 'index.html' %}
 
-{% block title %}Submit a Post{% endblock %}
+{% block title %}Submit A Post{% endblock %}
 
 {% block form %}
 {% if status %}
   <h1>{{ status }}</h1>
 {% endif %}
 <h2>
-    Submit a Post
+    Submit A Post
 </h2>
-
+<p>
+    Got something to share? Submit your thoughts and questions here!
+</p>
 <form method="post" action="/submit">
-    <p>Got something to share? Submit your thoughts and questions here: <input type="text" name="post"></p>
+    <p><input type="text" name="post" placeholder="Type a post..."></p>
     <p><input type="submit"></p>
+</form>
+<form action = "/posts">
+  <button class="button button1">Click here to check out what the SBU community has been saying!</button>
 </form>
 
 <center><img src="{{ post_image }}"></center>
