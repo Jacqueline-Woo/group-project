@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session
 from markupsafe import escape
 import csv
 import os
+import time
 from flask_login import current_user
 from flask_login import login_required, LoginManager, login_user
 from datetime import datetime
@@ -17,7 +18,8 @@ app.config['UPLOAD_FOLDER'] = picFolder
 # HTML form
 @app.route('/login')
 def login():
-    return render_template("login.html")
+    welcome = os.path.join(app.config['UPLOAD_FOLDER'],'welcome.gif')
+    return render_template("login.html", welcome_image = welcome)
 
 
 
@@ -35,7 +37,7 @@ def users_login_email_password():
         for row in data:
             if not first_line:
                 if( row[3].strip() == email.strip() and row[4].strip() == password.strip() ):
-                    return render_template("feed.html", status="User found!",users = users)
+                    return render_template("submit.html", status="User found!",users = users)
             else:
                 first_line = False
 
@@ -79,7 +81,8 @@ def return_users():
 # HTML form
 @app.route('/newUser')
 def new_user():
-    return render_template("new_user.html")
+    reg = os.path.join(app.config['UPLOAD_FOLDER'],'reg.gif')
+    return render_template("new_user.html", reg_image = reg)
 
 # Write to a CSV file
 @app.route('/newUser', methods=["GET", "POST"])
@@ -101,7 +104,7 @@ def submit_form():
                 data = csv.writer(file)
                 data.writerow([fname, lname, city, email, password, confirmpassword])
             # return render_template("new_user.html", status='You have successfully created an account!') 
-            return render_template("feed.html", status='You have successfully created an account!')
+            return render_template("submit.html", status='You have successfully created an account!')
 
 # HTML form
 @app.route('/getUser')
@@ -135,8 +138,9 @@ def return_users_by_city():
 
 # HTML form - Submit page
 @app.route('/submit')
-def feed():
-    return render_template("submit.html")
+def submit():
+    post_image = os.path.join(app.config['UPLOAD_FOLDER'],'post.gif')
+    return render_template("submit.html", post_image = post_image)
 
 @app.route('/submit', methods=["GET", "POST"])
 def submit_post():
@@ -149,8 +153,9 @@ def submit_post():
             return render_template("submit.html", status='Submission was blank. Please try again.')
         else:
             with open('data/posts.csv', mode='a', newline='') as file:
-                data = csv.writer(file)
+                data = csv.writer(file, delimiter=',')
                 data.writerow([post])
+            #dateTimeObj = datetime.now()
             return render_template("submit.html", status='Post submitted!', post=post)
 
 # taken from https://kellylougheed.medium.com/make-a-flask-app-with-a-csv-as-a-flat-file-database-373632a2fba4

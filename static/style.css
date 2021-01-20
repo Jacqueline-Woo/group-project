@@ -1,30 +1,21 @@
 body {
   font-family: 'Times New Roman', Times, serif;
-  background-color: #80bfff;
+  background-color: #70b9db;
   margin: 0px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
   text-align: center;
 }
 
 .bodyContent {
     margin: 16px;
-    padding: 40px ;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    text-align: center;
 }
 
 #user_list {
-    background-color:none;
+    background-color: #ccccff;
     width: 250px;
 }
 
-
 input {
-  background:none;
+  background: none;
   font-family: courier;
   font-size: 1.1em;
   padding: 5px;
@@ -33,13 +24,13 @@ input {
 }
 
 .topnav {
-  background-color: #333;
+  background-color: rgb(195, 162, 207);
   overflow: hidden;
 }
 
 .topnav a {
   float: left;
-  color: #f2f2f2;
+  color: #fffefe;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
