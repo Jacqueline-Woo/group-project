@@ -96,8 +96,6 @@ def users_login_email_password():
             else:
                 first_line = False
 
-    if not ( row[3].strip() == email.strip() and row[4].strip() == password.strip() ):
-            return render_template("new_user.html",status = "Don't have accoun't? Regiter now!")
 
 @app.route('/feed')
 def feed():
@@ -117,3 +115,7 @@ def submit_post():
                 data = csv.writer(file)
                 data.writerow([post])
             return render_template("feed.html", status='Post submitted!')
+
+@app.route('/button')
+def button():
+    return render_template("new_user.html")

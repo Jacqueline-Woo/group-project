@@ -10,17 +10,21 @@
     SBUWEB LOGIN
 </h2>
 <form method="post" action="/login">
-    <p>Email: <input type="text" name="email"></p>
-    <p>Password: <input type="text" name="password"></p>
-    <p><input type="submit"></p>
+    <p><input type="text" name="email" placeholder="Email"></p>
+    <p><input type="text" name="password" placeholder="Password"></p>
+    <p><input type="submit" name = "" value = "Sign In"></p>
 </form>
+<form action = "/button">
+    <button class="button button1">Don't have an account? Register now!</button>
+</form>
+
 {% endblock %}
 
 {% block userList %}
 <div id="user_list">
 {% for user in users %}
     <h2>
-        {{ user.fname }} {{ user.lname }}
+        "Don't have an account?"
     </h2>
 {% endfor %}
 {% endblock %}
