@@ -7,15 +7,21 @@
     </head>
     
     <body>
+
+        <audio controls>
+            <source src="calm.mp3" type="audio/mpeg"/>
+            Your browser does not support the audio tag.
+          </audio>
+        
         <div class="topnav">
-            <a href="/">Home</a>
+            <a href="/">Welcome</a>
+            <a href="/newUser">Registration</a>
+            <a href="/login">Login</a>
             <a href="/feed">Feed</a>
-            <a href="/users">Users</a>
             <a href="/posts">Posts</a>
-            <a href="/newUser">New User</a>
-            <a href="/getUser">Login</a>
-            <a href="/about">About</a>
-            <a href="/profile">Profile</a>
+            <a href="/profile"> My Profile</a>
+            <a href="/users">Users</a>
+            <a href="/about">About Us</a>
         </div>
        
        
@@ -50,8 +56,9 @@
             {% endfor %}
             {% endblock %}
 
-             </div>
+             
             </div>
         </div>
+
     </body>
 </html>

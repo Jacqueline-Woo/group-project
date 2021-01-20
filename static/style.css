@@ -1,7 +1,9 @@
 body {
   font-family: 'Times New Roman', Times, serif;
-  background-color: #80bfff;
+  background-color: #70b9db;
   margin: 0px;
+  background-image: url("pic1.jpg");
+  
 }
 
 .bodyContent {
@@ -13,7 +15,6 @@ body {
     width: 250px;
 }
 
-
 input {
   background: none;
   font-family: courier;
@@ -24,13 +25,13 @@ input {
 }
 
 .topnav {
-  background-color: #333;
+  background-color: rgb(195, 162, 207);
   overflow: hidden;
 }
 
 .topnav a {
   float: left;
-  color: #f2f2f2;
+  color: #fffefe;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
