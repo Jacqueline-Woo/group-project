@@ -8,12 +8,13 @@
     <body>
         <div class="topnav">
             <a href="/">Home</a>
-            <a href="/submit">Submit a Post</a>
-            <a href="/posts">Posts</a>
             <a href="/users">Users</a>
             <a href="/newUser">New User</a>
-            <a href="/getUser">Get User</a>
+            <a href="/login">Login</a>
+            <a href="/submit">Submit A Post</a>
+            <a href="/posts">Posts</a>
             <a href="/about">About</a>
+            <a href="/profile">Profile</a>        
         </div>
         <div class="bodyContent">
             <h1>
@@ -29,11 +30,19 @@
                 <p>
                   <b>City</b>: {{ user.city }}
                 </p>
+                <p>
+                    <b>Email</b>: {{ user.email }}
+                </p>
+                <p>
+                    <b>Password</b>: {{ user.password }}
+                </p>
+                <p>
+                    <b>ConfirmPassword</b>: {{ user.confirmpassword }}
+                </p>
             {% endfor %}
             {% endblock %}
             </div>
             {% block posts %} {% endblock %}
-
         </div>
     </body>
 </html>

@@ -4,6 +4,7 @@ import csv
 import os
 from flask_login import current_user
 from flask_login import login_required, LoginManager, login_user
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -40,6 +41,10 @@ def users_login_email_password():
 
     if not ( row[3].strip() == email.strip() and row[4].strip() == password.strip() ):
             return render_template("new_user.html",status = "Don't have account? Register now!")
+
+@app.route('/button')
+def button():
+    return render_template("new_user.html")
 
 @app.route('/')
 def hello_world():
@@ -179,6 +184,10 @@ def return_posts():
             else:
                 first_line = False
     return render_template("posts.html", posts=posts)
+
+#@app.route('/seeposts')
+#def see_posts():
+ #   return redirect(url_for('/posts'))
 
         #if( len(post) == 0 ):
             #return render_template("feed.html", status='Submission was blank. Please try again.')

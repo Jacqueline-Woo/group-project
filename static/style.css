@@ -1,7 +1,8 @@
 body {
-  font-family: georgia;
-  background-color: teal;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #80bfff;
   margin: 0px;
+  text-align: center;
 }
 
 .bodyContent {
@@ -9,13 +10,14 @@ body {
 }
 
 #user_list {
-    background-color: pink;
+    background-color: #ccccff;
     width: 250px;
 }
 
+
 input {
-  background: none;
-  font-family: georgia;
+  background:none;
+  font-family: courier;
   font-size: 1.1em;
   padding: 5px;
   border-radius: 10px;
@@ -34,9 +36,35 @@ input {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .topnav a:hover {
   background-color: #ddd;
   color: black;
+}
+
+.button{
+  border: none;
+  color: none;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color:#80bfff; 
+  color: black; 
+  border: 2px solid #80bfff;
+}
+
+.button1:hover {
+  background-color: #80bfff;
+  color: white;
 }
