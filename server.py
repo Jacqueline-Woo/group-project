@@ -187,7 +187,7 @@ def return_posts():
 
 #@app.route('/seeposts')
 #def see_posts():
- #   return redirect(url_for('/posts'))
+#    return redirect(url_for('/posts'))
 
         #if( len(post) == 0 ):
             #return render_template("feed.html", status='Submission was blank. Please try again.')

@@ -2,15 +2,23 @@ body {
   font-family: 'Times New Roman', Times, serif;
   background-color: #80bfff;
   margin: 0px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
   text-align: center;
 }
 
 .bodyContent {
     margin: 16px;
+    padding: 40px ;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
 }
 
 #user_list {
-    background-color: #ccccff;
+    background-color:none;
     width: 250px;
 }
 
@@ -36,8 +44,6 @@ input {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
-  display: flex;
-  justify-content: flex-end;
 }
 
 .topnav a:hover {
