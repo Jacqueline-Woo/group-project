@@ -8,7 +8,8 @@
     <body>
         <div class="topnav">
             <a href="/">Home</a>
-            <a href="/feed">Feed</a>
+            <a href="/submit">Submit a Post</a>
+            <a href="/posts">Posts</a>
             <a href="/users">Users</a>
             <a href="/newUser">New User</a>
             <a href="/getUser">Get User</a>
@@ -20,7 +21,7 @@
             </h1>
             {% block form %} {% endblock %}
             {% block userList %}
-            <div id="user_list">
+            <div id="user_List">
             {% for user in users %}
                 <h2>
                   {{ user.fname }} {{ user.lname }}
@@ -31,6 +32,8 @@
             {% endfor %}
             {% endblock %}
             </div>
+            {% block posts %} {% endblock %}
+
         </div>
     </body>
 </html>
