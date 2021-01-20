@@ -1,4 +1,4 @@
-Fname,Lname,City
+Fname,Lname,City,Email,Password,ConfirmPassword
 Anne,Smith,New York
 Anita,Singh,London
 Carly,Zhang,Dallas
@@ -7,3 +7,4 @@ Lee,Smith,Stony Brook
 Anna,Garcia,Portland
 Jacqueline,Woo,Flushing,jacqueline.woo@stonybrook.edu,raspberries,raspberries
 Jacqueline,Woo,Flushing,jacqueline.woo@stonybrook.edu,raspberries,raspberries
+Jacqueline,Woo,Flushing,jacqueline.woo@stonybrook.edu,lingonberry,lingonberry

@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}A MERIT Example{% endblock %}</title>
+        <title>{% block title %}SBUWEB{% endblock %}</title>
         <link rel="stylesheet" type="text/css" href="static/style.css">
     </head>
     <body>
@@ -13,13 +13,17 @@
             <a href="/login">Login</a>
             <a href="/submit">Submit A Post</a>
             <a href="/posts">Posts</a>
-            <a href="/about">About</a>
-            <a href="/profile">Profile</a>        
+            <a href="/about">About</a>       
         </div>
         <div class="bodyContent">
             <h1>
                 Welcome to Group 2's website!
             </h1>
+
+            
+            <center><img src="{{ homepic }}"></center>
+            
+
             {% block form %} {% endblock %}
             {% block userList %}
             <div id="user_List">

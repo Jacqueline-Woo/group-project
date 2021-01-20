@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+
+{% block title %}About Us{% endblock %}
+{% block form %}
+{% if status %}
+
+  <h1>{{ status }}</h1>
+{% endif %}
+
+<h2>
+    Purpose of this website:
+</h2>
+<p>
+    The goal of our website is to provide a platform that serves as an interactive virtual safe space for Stony Brook students to connect through shared experiences as well as queries about college life. 
+</p>
+<h2>
+    Information about the creators:
+</h2>
+<p>
+    We are Yuzhu (Katy) Chen, Kailey Van, and Jacqueline Woo!
+</p>
+<center><img src="{{ aboutus_image2 }}"></center>
+<center><img src="{{ lol_image }}"></center>
+<left><img src="{{ user_image5 }}"></left>
+<center><img src="{{ user_image6 }}"></center>
+{% endblock %}

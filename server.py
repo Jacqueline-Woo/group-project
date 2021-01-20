@@ -18,8 +18,8 @@ app.config['UPLOAD_FOLDER'] = picFolder
 # HTML form
 @app.route('/login')
 def login():
-    welcome = os.path.join(app.config['UPLOAD_FOLDER'],'welcome.gif')
-    return render_template("login.html", welcome_image = welcome)
+    log_in = os.path.join(app.config['UPLOAD_FOLDER'],'log_in.png')
+    return render_template("login.html", log_in = log_in)
 
 
 
@@ -50,11 +50,18 @@ def button():
 
 @app.route('/')
 def hello_world():
-    return render_template("index.html")
+    homepic = os.path.join(app.config['UPLOAD_FOLDER'],'homepic.png')
+    return render_template("index.html", homepic = homepic)
 
+# HTML page?
 @app.route('/about')
-def about():
-    return 'This site was developed by Arpita'
+def about_us():
+    #pic2 = os.path.join(app.config['UPLOAD_FOLDER'],'pic2.gif')
+    aboutus2 = os.path.join(app.config['UPLOAD_FOLDER'],'aboutus2.png')
+    lol = os.path.join(app.config['UPLOAD_FOLDER'],'lol.gif')
+    pic5 = os.path.join(app.config['UPLOAD_FOLDER'],'pic5.gif')
+    pic6 = os.path.join(app.config['UPLOAD_FOLDER'],'pic6.gif')
+    return render_template("about_us.html", user_image5 = pic5, user_image6 = pic6, lol_image = lol, aboutus_image2 = aboutus2)
 
 @app.route('/hello/<uname>')
 def say_hello(uname):
