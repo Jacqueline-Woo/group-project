@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+
+{% block title %}Feed{% endblock %}
+
+{% block form %}
+{% if status %}
+  <h1>{{ status }}</h1>
+{% endif %}
+<h2>
+  Got something to share? Submit your thoughts and questions here 
+</h2>
+<form method="post" action="/submit">
+    <p><input type="text" name="post" placeholder="Say something here..."></p>
+    <p><input type="submit" name = "submit" value = "Post"></p>
+</form>
+{% endblock %}

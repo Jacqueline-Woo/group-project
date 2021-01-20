@@ -83,8 +83,8 @@ def users_login_email_password():
     userdata = dict(request.form)
     email = userdata["email"]
     password = userdata["password"]
-    if( len(password)<10):
-        return render_template("login.html", status="Invalid password, please enter again.")
+    #if( len(password)<10):
+        #return render_template("login.html", status="Invalid email and password, please enter again.")
     with open('data/users.csv') as file:
         data = csv.reader(file, delimiter=',')
         first_line = True
@@ -92,30 +92,49 @@ def users_login_email_password():
         for row in data:
             if not first_line:
                 if( row[3].strip() == email.strip() and row[4].strip() == password.strip() ):
-                    return render_template("feed.html", status="Users found!",users = users)
+                    return render_template("submit.html", status="Users found!",users = users)
             else:
                 first_line = False
+    if (row[4].strip() == password.strip() ):
+        if not (row[3].strip() == email.strip()):
+            return render_template("login.html", status="Please login with your sbu mail")
 
 
-@app.route('/feed')
+@app.route('/submit')
 def feed():
-    return render_template("feed.html")
+    return render_template("submit.html")
 
-@app.route('/feed', methods=["GET", "POST"])
+@app.route('/submit', methods=["GET", "POST"])
 def submit_post():
     if request.method == "GET":
-        return redirect(url_for('feed'))
+        return redirect(url_for('submit'))
     elif request.method == "POST":
         submission = dict(request.form)
         post = submission["post"]
         if( len(post) < 1 ):
-            return render_template("feed.html", status='Submission was blank. Please try again.')
+            return render_template("submit.html", status='Submission was blank. Please try again.')
         else:
             with open('data/posts.csv', mode='a', newline='') as file:
                 data = csv.writer(file)
                 data.writerow([post])
-            return render_template("feed.html", status='Post submitted!')
+            return render_template("submit.html", status='Post submitted!', post =post)
 
 @app.route('/button')
 def button():
     return render_template("new_user.html")
+
+@app.route('/posts')
+def return_posts():
+    with open('data/posts.csv') as file:
+        data = csv.reader(file, delimiter=',')
+        first_line = True
+        posts = []
+        for row in data:
+            if not first_line:
+                posts.append({
+                "post": row[0]
+                })
+                #print(f'\tPOST: {row[0]}')
+            else:
+                first_line = False
+    return render_template("posts.html", posts=posts)

@@ -16,12 +16,12 @@
     Submit your information!
 </h2>
 <form method="post" action="/newUser">
-    <p>First Name: <input type="text" name="fname"></p>
-    <p>Last Name: <input type="text" name="lname"></p>
-    <p>City: <input type="text" name="city"></p>
-    <p>Email: <input type="text" name="email"></p>
-    <p>Password: <input type="text" name="password"></p>
-    <p>Confirm Password: <input type="text" name="confirmpassword"></p>
+    <p><input type="text" name="fname" placeholder="First name"></p>
+    <p><input type="text" name="lname" placeholder="Last Name"></p>
+    <p><input type="text" name="city" placeholder="City"></p>
+    <p><input type="text" name="email" placeholder="Email"></p>
+    <p><input type="text" name="password" placeholder="Password" minlength="10"></p>
+    <p><input type="text" name="confirmpassword" placeholder="Confirm Password" minlength="10"></p>
     <p><input type="submit"></p>
 </form>
 {% endblock %}
