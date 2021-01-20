@@ -26,9 +26,11 @@ def hello_world():
 @app.route('/about')
 def about_us():
     #pic2 = os.path.join(app.config['UPLOAD_FOLDER'],'pic2.gif')
+    aboutus2 = os.path.join(app.config['UPLOAD_FOLDER'],'aboutus2.png')
+    lol = os.path.join(app.config['UPLOAD_FOLDER'],'lol.gif')
     pic5 = os.path.join(app.config['UPLOAD_FOLDER'],'pic5.gif')
     pic6 = os.path.join(app.config['UPLOAD_FOLDER'],'pic6.gif')
-    return render_template("about_us.html", user_image5 = pic5, user_image6 = pic6)
+    return render_template("about_us.html", user_image5 = pic5, user_image6 = pic6, lol_image = lol, aboutus_image2 = aboutus2)
 
 
 # HTML page?
