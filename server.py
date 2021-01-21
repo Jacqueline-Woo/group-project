@@ -156,13 +156,16 @@ def submit_post():
     elif request.method == "POST":
         submission = dict(request.form)
         post = submission["post"]
+        #time = submission["time"]
         if( len(post) < 1 ):
             return render_template("submit.html", status='Submission was blank. Please try again.')
         else:
+            #dateTimeObj = datetime.now()
+            #timestampStr = dateTimeObj.strftime("%d-%b-%Y (%H:%M:%S.%f)")
+            #time = timestampStr
             with open('data/posts.csv', mode='a', newline='') as file:
                 data = csv.writer(file, delimiter=',')
                 data.writerow([post])
-            #dateTimeObj = datetime.now()
             return render_template("submit.html", status='Post submitted!', post=post)
 
 # taken from https://kellylougheed.medium.com/make-a-flask-app-with-a-csv-as-a-flat-file-database-373632a2fba4
@@ -190,7 +193,8 @@ def return_posts():
         for row in data:
             if not first_line:
                 posts.append({
-                "post": row[0]
+                "post": row[0], 
+                #"time": row[1]
                 })
                 #print(f'\tPOST: {row[0]}')
             else:
