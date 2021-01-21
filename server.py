@@ -77,10 +77,7 @@ def return_users():
                 users.append({
                 "fname": row[0],
                 "lname": row[1],
-                "city": row[2],
-                "email": row[3],
-                "password": row[4],
-                "confirmpassword": row[5]
+                "city": row[2]
                 })
             else:
                 first_line = False
