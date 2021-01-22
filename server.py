@@ -38,6 +38,9 @@ def users_login_email_password():
             if not first_line:
                 if( row[3].strip() == email.strip() and row[4].strip() == password.strip() ):
                     return render_template("submit.html", status="User found!",users = users)
+                # This is for if the email is right but password is wrong.
+                elif ( row[3].strip() == email.strip() and not row[4].strip() == password.strip() ):
+                    return render_template("login.html",status = "Incorrect password. Please try again.")
             else:
                 first_line = False
 
