@@ -94,16 +94,16 @@ def return_posts():
         for row in data:
             if not first_line:
                 posts.append({
-                "posts": row[0]
+                "post": row[0]
                 })
             else:
                 first_line = False
-    return render_template("index.html", posts=posts)
+    return render_template("posts.html", posts=posts)
 
 
 # HTML form - Submit page
 @app.route('/submit')
-def feed():
+def submit():
     post_image = os.path.join(app.config['UPLOAD_FOLDER'],'post.gif')
     return render_template("submit.html", post_image = post_image)
 
