@@ -12,7 +12,9 @@ body {
 #user_list {
     background-color: #ccccff;
     width: 250px;
+    text-align: center;
 }
+
 
 input {
   background: none;

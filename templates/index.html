@@ -26,22 +26,13 @@
 
             {% block form %} {% endblock %}
             {% block userList %}
-            <div id="user_List">
+            <div id="user_list">
             {% for user in users %}
                 <h2>
                   {{ user.fname }} {{ user.lname }}
                 </h2>
                 <p>
                   <b>City</b>: {{ user.city }}
-                </p>
-                <p>
-                    <b>Email</b>: {{ user.email }}
-                </p>
-                <p>
-                    <b>Password</b>: {{ user.password }}
-                </p>
-                <p>
-                    <b>ConfirmPassword</b>: {{ user.confirmpassword }}
                 </p>
             {% endfor %}
             {% endblock %}
