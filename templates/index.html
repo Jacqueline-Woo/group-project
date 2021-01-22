@@ -2,13 +2,25 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}A MERIT Example{% endblock %}</title>
+        <title>{% block title %}SBUWEB{% endblock %}</title>
         <link rel="stylesheet" type="text/css" href="static/style.css">
     </head>
+    
     <body>
+
+        <audio controls>
+            <source src="calm.mp3" type="audio/mpeg"/>
+            Your browser does not support the audio tag.
+          </audio>
+        
         <div class="topnav">
-            <a href="/">Home</a>
+            <a href="/">Welcome</a>
+            <a href="/newUser">Registration</a>
+            <a href="/login">Login</a>
+            <a href="/submit">Submit a Post</a>
+            <a href="/posts">Posts</a>
             <a href="/users">Users</a>
+<<<<<<< HEAD
             <a href="/newUser">New User</a>
             <a href="/getUser">Get User</a>
             <a href="/about">About</a>
@@ -19,12 +31,25 @@
             <h1>
                 Welcome to our website!
 =======
+=======
+            <a href="/about">About Us</a>
+>>>>>>> c0168c0057894fecd7d50335f302b897cd7ed806
         </div>
+       
+       
         <div class="bodyContent">
             <h1>
+<<<<<<< HEAD
                 Hello from your MERIT mentors!
 >>>>>>> 9d0b1be352caa575c8f6d9fb67109cdf49fac70c
+=======
+                Welcome to Group 2's website!
+>>>>>>> c0168c0057894fecd7d50335f302b897cd7ed806
             </h1>
+
+            <center><img src="{{ homepic }}"></center>
+            
+
             {% block form %} {% endblock %}
             {% block userList %}
             <div id="user_list">
@@ -35,6 +60,7 @@
                 <p>
                   <b>City</b>: {{ user.city }}
                 </p>
+<<<<<<< HEAD
 <<<<<<< HEAD
                 <p>
                     <b>Email</b>: {{ user.email }}
@@ -47,9 +73,17 @@
                 </p>
 =======
 >>>>>>> 9d0b1be352caa575c8f6d9fb67109cdf49fac70c
+=======
+                
+
+>>>>>>> c0168c0057894fecd7d50335f302b897cd7ed806
             {% endfor %}
             {% endblock %}
+
+             
             </div>
+            {% block posts %} {% endblock %}
         </div>
+
     </body>
 </html>

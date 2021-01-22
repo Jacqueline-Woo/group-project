@@ -13,9 +13,13 @@
   <h1>{{ status }}</h1>
 {% endif %}
 <h2>
-    Submit your information!
+    SBUWEB REGISTRATION
 </h2>
+
+<center><img src="{{ reg_image }}"></center>
+
 <form method="post" action="/newUser">
+<<<<<<< HEAD
     <p>First Name: <input type="text" name="fname"></p>
     <p>Last Name: <input type="text" name="lname"></p>
     <p>City: <input type="text" name="city"></p>
@@ -33,3 +37,17 @@
 </form>
 {% endblock %}
 >>>>>>> 9d0b1be352caa575c8f6d9fb67109cdf49fac70c
+=======
+    <p><input type="text" name="fname" placeholder="First Name"></p>
+    <p><input type="text" name="lname" placeholder="Last Name"></p>
+    <p><input type="text" name="city" placeholder="City"></p>
+    <p><input type="text" name="email" placeholder="Email"></p>
+    <p><input type="password" name="password" placeholder="Password" minlength="10" ></p>
+    <p><input type="password" name="confirmpassword" placeholder="Confirm Password" minlength="10" ></p>
+    <p><input type="submit"></p>
+</form>
+
+{% endblock %}
+
+
+>>>>>>> c0168c0057894fecd7d50335f302b897cd7ed806

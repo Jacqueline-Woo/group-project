@@ -1,7 +1,8 @@
 body {
-  font-family: courier;
-  background-color: lightblue;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #70b9db;
   margin: 0px;
+  text-align: center;
 }
 
 .bodyContent {
@@ -9,7 +10,7 @@ body {
 }
 
 #user_list {
-    background-color: pink;
+    background-color: #ccccff;
     width: 250px;
 }
 
@@ -23,13 +24,13 @@ input {
 }
 
 .topnav {
-  background-color: #333;
+  background-color: rgb(195, 162, 207);
   overflow: hidden;
 }
 
 .topnav a {
   float: left;
-  color: #f2f2f2;
+  color: #fffefe;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -40,3 +41,28 @@ input {
   background-color: #ddd;
   color: black;
 }
+
+.button{
+  border: none;
+  color: none;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color:#80bfff; 
+  color: black; 
+  border: 2px solid #80bfff;
+}
+
+.button1:hover {
+  background-color: #80bfff;
+  color: white;
+}
+

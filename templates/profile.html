@@ -5,20 +5,19 @@
 {% if status %}
   <h1>{{ status }}</h1>
 {% endif %}
-<h2>
-    My Profile
-</h2>
 
-<h3>
-    Name: 
-</h3>
 
-<h3>
-    City:
-</h3>
+<div class="content-section">
+    <div class="media">
+      <img class="rounded-circle account-img" src="{{ user_image2 }}">
+      <div class="media-body">
+        <h2 class="account-heading">Username</h2>
+        <p class="text-secondary">{{current_user.email}}</p>
+      </div>
+    </div>
+    <!-- FORM HERE -->
+  </div>
 
-<h3>
-    Email:
-</h3>
 
 {% endblock %}
+

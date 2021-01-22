@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 Fname,Lname,City,Email,Password,ConfirmPassword
 Anne,Smith,New York,anne.smith@stonybrook.edu,strawberries,strawberries
 Anita,Singh,London,anita.singh@stonybrook.edu,strawberries,strawberries
@@ -16,3 +17,12 @@ Dani,Lee,Rome
 Lee,Smith,Stony Brook
 Anna,Garcia,Portland
 >>>>>>> 9d0b1be352caa575c8f6d9fb67109cdf49fac70c
+=======
+Fname,Lname,City,Email,Password,ConfirmPassword
+Anne,Smith,New York,anne.smith@stonybrook.edu,strawberries,strawberries
+Anita,Singh,London,anita.singh@stonybrook.edu,strawberries,strawberries
+Carly,Zhang,Dallas,carly.zhang@stonybrook.edu,strawberries,strawberries
+Dani,Lee,Rome,danilee.rome@stonybrook.edu,strawberries,strawberries
+Lee,Smith,Stony Brook,lee.smith@stonybrook.edu,strawberries,strawberries
+Anna,Garcia,Portland,anna.garcia@stonybrook.edu,strawberries,strawberries
+>>>>>>> c0168c0057894fecd7d50335f302b897cd7ed806
